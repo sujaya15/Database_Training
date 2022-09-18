@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/14/2022 12:13:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ELW5231"
+  DTS:CreatorName="CORPINDIA\EI13112"
+  DTS:DTSID="{F1B4FFC8-4239-4A4E-A9E9-F8120DCC06DF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Single_Sqltask"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{40180A01-1DD6-400C-AC32-36A6C6C9D99D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[rewansolution.database.windows.net.dlithe.rewan]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1E1350B1-6E70-4DFA-B0C1-128E0256E307}"
+      DTS:ObjectName="rewansolution.database.windows.net.dlithe.rewan">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=rewansolution.database.windows.net;User ID=rewan;Initial Catalog=dlithe;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0x1sfpUL902Td3/0LNa5cAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABUBYGxaVaiFsTOhV0TgzPeAAAAAASAAACgAAAAEAAAACler7jobGVwtPH1pIPgCrgYAAAA/Vum2D5fcXZUmCmS5xh2aieiRvVx27o+FAAAAHj7iqozWiDr6rdbNrojcI0tPsRj</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TABLE SQL OPERATION"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="CREATE,INSERT,UPDATE,TRUNCATE,DELETE"
+      DTS:DTSID="{B0C774BE-EA53-47C2-BA76-2D733853B71B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TABLE SQL OPERATION"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1E1350B1-6E70-4DFA-B0C1-128E0256E307}"
+          SQLTask:SqlStatementSource="CREATE TABLE dlithe.dbo.SUJ_SDNT&#xA;(&#xA;USN INT,&#xA;NAME VARCHAR(20),&#xA;CLASS INT,&#xA;SUBJECT VARCHAR(30)&#xA;&#xA;);&#xA;&#xA;INSERT INTO SUJ_SDNT VALUES(1,'SMITHA',7,'MATHS');&#xA;INSERT INTO SUJ_SDNT VALUES(2,'SOORAJ',8,'SCIENCE');&#xA;INSERT INTO SUJ_SDNT VALUES(3,'SUDHA',7,'SOCIALSCIENCE');&#xA;INSERT INTO SUJ_SDNT VALUES(4,'ANURAG',9,'ECONOMICS');&#xA;INSERT INTO SUJ_SDNT VALUES(5,'ASHITHA',10,'COMPUTERSCIENCE');&#xA;&#xA;&#xA;UPDATE SUJ_SDNT&#xA;SET CLASS=10&#xA;WHERE USN=4;&#xA;&#xA;DELETE FROM SUJ_SDNT&#xA;WHERE USN=5;&#xA;&#xA;TRUNCATE TABLE SUJ_SDNT;&#xA;&#xA;DROP TABLE SUJ_SDNT;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="202.666666666667,42.6666666666667"
+          Id="Package\TABLE SQL OPERATION"
+          TopLeft="24.1666663065556,14.5964915028132" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
